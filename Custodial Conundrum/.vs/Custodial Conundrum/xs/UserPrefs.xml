@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{85C2A0C0-9C9C-CC56-EA9D-686E7E87EE1A}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EnemyController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TeacherView.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="18" Column="6" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="22" Column="61" />
       <File FileName="Assets/Scripts/CameraMovement.cs" Line="19" Column="6" />
-      <File FileName="Assets/Scripts/EnemyController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/EnemyController.cs" Line="33" Column="11" />
+      <File FileName="Assets/Scripts/TeacherView.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
