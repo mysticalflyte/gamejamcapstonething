@@ -8,12 +8,16 @@ public class EnemyController : MonoBehaviour
     public Transform[] waypoints;
     private int currentdestination;
     private NavMeshAgent nav;
+    private enum state { Patrol, Detect };
+    private state currentstate;
+    private Transform target;
 
     // Start is called before the first frame update
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
         nav.autoBraking = false;
+        currentstate = state.Patrol;
         Patrol();
     }
 
@@ -31,7 +35,13 @@ public class EnemyController : MonoBehaviour
         }
         nav.destination = waypoints[currentdestination].position;
         //nav.destination = transform.TransformPoint(nav.destination);
-        Debug.Log(nav.destination);
         currentdestination = (currentdestination + 1) % waypoints.Length;
     }
+
+    /*public void Detect(Transform player) {
+        nav.speed += 3;
+        nav.destination = player.position;
+        target = player;
+        currentstate = state.Detect;
+    }*/
 }

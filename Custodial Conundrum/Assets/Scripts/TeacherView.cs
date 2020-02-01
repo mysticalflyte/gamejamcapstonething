@@ -8,7 +8,6 @@ public class TeacherView : MonoBehaviour
     private bool detecting = false;
     private RaycastHit hit;
     private Transform player;
-    int layerMask = 1 << 8;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +31,8 @@ public class TeacherView : MonoBehaviour
                 if (hit.collider.gameObject.tag == "Player")
                 {
                     Debug.DrawLine(player.position, transform.position, Color.green);
-                    Debug.Log("In Angle!");
+                    player.GetComponent<PlayerController>().Detected(transform);
+                    //transform.parent.GetComponent<EnemyController>().Detect(player);
                 }
             }
         }
@@ -41,7 +41,6 @@ public class TeacherView : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player") {
-            Debug.Log("Player Detected!");
             player = other.transform;
             detecting = true;
         }
