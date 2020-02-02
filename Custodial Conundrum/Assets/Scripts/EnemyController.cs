@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     private enum state { Patrol, Detect };
     private state currentstate;
     private Transform target;
+    public bool looping = false;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +37,15 @@ public class EnemyController : MonoBehaviour
         }
         nav.destination = waypoints[currentdestination].position;
         //nav.destination = transform.TransformPoint(nav.destination);
-        currentdestination = (currentdestination + 1) % waypoints.Length;
+        currentdestination = (currentdestination + 1);
+        if (looping) {
+            currentdestination %= waypoints.Length;
+        }
+        else {
+            if (currentdestination == waypoints.Length + 1) {
+                nav.isStopped = true;
+            }
+        }
     }
 
     /*public void Detect(Transform player) {
