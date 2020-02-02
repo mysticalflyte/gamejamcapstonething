@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8226280281067025245
+--- !u!1001 &3476566006968411548
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,17 +10,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 4c5b7bcaf64106543adec45ed859b27a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.324967
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4c5b7bcaf64106543adec45ed859b27a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5191807e-17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4c5b7bcaf64106543adec45ed859b27a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.111943
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4c5b7bcaf64106543adec45ed859b27a,
         type: 3}
@@ -65,27 +65,28 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 4c5b7bcaf64106543adec45ed859b27a,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.78285
+      value: 0.74693
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4c5b7bcaf64106543adec45ed859b27a,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.78285
+      value: 0.74693
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4c5b7bcaf64106543adec45ed859b27a,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.78285
+      value: 0.74693
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 4c5b7bcaf64106543adec45ed859b27a,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 66fe86dd97e2fd84da5485b5753db1b5, type: 2}
+      objectReference: {fileID: 8556262120643298411, guid: 35c1adc5bf7eb1f48b63ca55ff98d8dc,
+        type: 3}
     - target: {fileID: -927199367670048503, guid: 4c5b7bcaf64106543adec45ed859b27a,
         type: 3}
       propertyPath: m_Name
-      value: Props.fbx_Window.fbx_Potion_Bottle
+      value: Props.fbx_Window.fbx_Potion_Bottle (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c5b7bcaf64106543adec45ed859b27a, type: 3}
