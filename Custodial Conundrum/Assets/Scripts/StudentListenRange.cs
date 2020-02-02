@@ -8,13 +8,17 @@ public class StudentListenRange : MonoBehaviour
     private Canvas messageCanvas;
     private bool closeRange;
     private bool listenRange;
+    private AudioSource source;
+    private bool played;
 
     // Start is called before the first frame update
     void Start()
     {
         closeRange = false;
         listenRange = false;
+        played = false;
         messageCanvas = GameObject.Find("MessageCanvas").GetComponent<Canvas>();
+        source = gameObject.GetComponent<AudioSource>();
         TurnOffSpeech();
     }
 
@@ -35,12 +39,17 @@ public class StudentListenRange : MonoBehaviour
     {
         Debug.Log("Turned on speech!!");
         messageCanvas.enabled = true;
+        if (!played) {
+            source.Play();
+            played = true;
+        }
     }
 
     private void TurnOffSpeech()
     {
         //Debug.Log("Turned off speech!!");
         messageCanvas.enabled = false;
+        played = false;
     }
 
     public void SetCloseRange( bool inRange)
