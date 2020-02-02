@@ -3,7 +3,18 @@ guid: 4c5b7bcaf64106543adec45ed859b27a
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete
+    second: {fileID: 4404839247605695133, guid: 35c1adc5bf7eb1f48b63ca55ff98d8dc,
+      type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red Glass
+    second: {fileID: 2100000, guid: d90bb061780fd864a9a2033eea778a11, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
