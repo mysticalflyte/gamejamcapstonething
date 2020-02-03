@@ -30,9 +30,6 @@ public class PlayerController : MonoBehaviour
             direction.z *= speed;
             direction = transform.TransformDirection(direction);
             controller.Move(direction * Time.deltaTime);
-            if (Input.GetKeyUp(KeyCode.E)) {
-                //interaction
-            }
         }
         else {
             starttime += Time.deltaTime;

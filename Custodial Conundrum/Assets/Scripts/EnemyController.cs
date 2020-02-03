@@ -17,7 +17,6 @@ public class EnemyController : MonoBehaviour
     {
         nav = GetComponent<NavMeshAgent>();
         nav.autoBraking = false;
-        nav.Warp(transform.position);
         currentstate = state.Patrol;
         Patrol();
     }
