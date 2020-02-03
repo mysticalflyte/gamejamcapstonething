@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
     public Transform[] waypoints;
     private int currentdestination;
     private NavMeshAgent nav;
-    private enum state { Patrol, Detect };
+    private enum state { Patrol, Detect, Stop };
     private state currentstate;
     private Transform target;
 
@@ -25,8 +25,32 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!nav.pathPending && nav.remainingDistance < 0.5f) {
-            Patrol();
+        if (currentstate == state.Patrol)
+        {
+            CheckPaintingAlert();
+            if (!nav.pathPending && nav.remainingDistance < 0.5f)
+            {
+                Patrol();
+            }
+        }
+    }
+
+
+    // Attempt to get the alert from a painting if it's within range
+    void CheckPaintingAlert()
+    {
+        Debug.Log("CHECKING FOR PAINTING ALERT...");
+        AlertRange painting = GameObject.FindWithTag("Painting").GetComponent<AlertRange>();
+        if (painting != null)
+        {
+            Debug.Log("PAINTING FOUND! NOT NULL!");
+            if (painting.GetAlerting())
+            {
+                Debug.Log("SWITCHING TO STOP STATE");
+                target = painting.transform;
+                nav.destination = target.position;
+                currentstate = state.Stop;
+            }
         }
     }
 
