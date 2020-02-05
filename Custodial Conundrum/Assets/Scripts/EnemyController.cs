@@ -39,7 +39,7 @@ public class EnemyController : MonoBehaviour
     // Attempt to get the alert from a painting if it's within range
     void CheckPaintingAlert()
     {
-        Debug.Log("CHECKING FOR PAINTING ALERT...");
+        //Debug.Log("CHECKING FOR PAINTING ALERT...");
         AlertRange painting = GameObject.FindWithTag("Painting").GetComponent<AlertRange>();
         if (painting != null)
         {
@@ -47,7 +47,7 @@ public class EnemyController : MonoBehaviour
             if (painting.GetAlerting())
             {
                 Debug.Log("SWITCHING TO STOP STATE");
-                target = painting.transform;
+                target = painting.transform.parent.transform;
                 nav.destination = target.position;
                 currentstate = state.Stop;
             }
