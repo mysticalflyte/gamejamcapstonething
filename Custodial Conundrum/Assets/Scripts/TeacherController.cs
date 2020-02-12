@@ -72,24 +72,29 @@ public class TeacherController : MonoBehaviour
         }
     }
 
-    public void StepInSpill(GameObject bucket) {
-        BucketAction bucketScript = bucket.GetComponent<BucketAction>();
+    public void StepInSpill(GameObject bucket, GameObject filledBucket, GameObject spilledBucket) {
+        BucketState bucketScript = bucket.GetComponent<BucketState>();
 
         Vector3 targetPosition = waypoints[currentdestination].position;
         nav.destination = transform.position;
         currentstate = state.Stop;
 
-        StartCoroutine(WaitForAnimation(bucketScript, bucket, targetPosition));
+        StartCoroutine(CleanUpSpill(bucketScript, spilledBucket, filledBucket, targetPosition));
     }
 
-    private IEnumerator WaitForAnimation (BucketAction bucketScript, GameObject bucket, Vector3 targetPosition) 
+    private IEnumerator CleanUpSpill (BucketState bucketScript, 
+                                      GameObject spilledBucket,
+                                      GameObject filledBucket,
+                                      Vector3 targetPosition) 
     {
-        // Debug.Log("Started Coroutine at timestamp : " + Time.time);
+        // Wait for 5 seconds while we clean up the spill
         yield return new WaitForSeconds(5);
-        bucketScript.SetSpilled(false);
         nav.destination = targetPosition;
         currentstate = state.Patrol;
-        // Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+        bucketScript.SetBucketState(bucketState.filled);
+
+        spilledBucket.GetComponent<Renderer>().enabled = false;
+        filledBucket.GetComponent<Renderer>().enabled = true;
     }
 
     /*public void Detect(Transform player) {

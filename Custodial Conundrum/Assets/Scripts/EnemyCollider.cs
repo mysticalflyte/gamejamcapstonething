@@ -7,25 +7,28 @@ public class EnemyCollider : MonoBehaviour
     // Instantiate a Prefab with an attached Bucket script
 
     public GameObject bucket;
+    public GameObject filledBucket;
+    public GameObject spilledBucket;
     public GameObject player;
 
     public BoxCollider enemyCollider;
 
-    BucketAction bucketScript;
+    BucketState bucketScript;
     
     void Start()
     {
-        bucketScript = transform.parent.GetComponent<BucketAction>();  
+        bucketScript = bucket.GetComponent<BucketState>();  
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        bool spilled = bucketScript.GetSpilled();
+        bucketState spillState = bucketScript.GetBucketState();
         if (other.gameObject.tag == "Teacher")
         {
             TeacherController teacherScript = other.gameObject.transform.parent.GetComponent<TeacherController>();
-            if (spilled) {
-                teacherScript.StepInSpill(bucket);
+            if (spillState == bucketState.spilled) {
+                bucketScript.SetBucketState(bucketState.teacher);
+                teacherScript.StepInSpill(bucket, filledBucket, spilledBucket);
             //     // Do something...
             }
         }
