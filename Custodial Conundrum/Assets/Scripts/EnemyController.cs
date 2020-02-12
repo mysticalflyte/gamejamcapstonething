@@ -43,10 +43,10 @@ public class EnemyController : MonoBehaviour
         AlertRange painting = GameObject.FindWithTag("Painting").GetComponent<AlertRange>();
         if (painting != null)
         {
-            Debug.Log("PAINTING FOUND! NOT NULL!");
+            // Debug.Log("PAINTING FOUND! NOT NULL!");
             if (painting.GetAlerting())
             {
-                Debug.Log("SWITCHING TO STOP STATE");
+                // Debug.Log("SWITCHING TO STOP STATE");
                 target = painting.transform.parent.transform;
                 nav.destination = target.position;
                 currentstate = state.Stop;

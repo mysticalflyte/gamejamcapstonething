@@ -12,12 +12,18 @@ public class PlayerController : MonoBehaviour
     private float waittime = 2.0f;
     private bool moveable;
     // Start is called before the first frame update
+
+    public GameObject bucket;
+    public GameObject clone;
+    bool spilled;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
         moveable = true;
         startpos = transform.position;
         starttime = 0.0f;
+        spilled = false;
     }
 
     // Update is called once per frame
@@ -46,8 +52,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Detected(Transform teacher) {
-        Debug.Log("DETECTED");
-        Debug.Log(startpos);
+        // Debug.Log("DETECTED");
         moveable = false;
     }
 }

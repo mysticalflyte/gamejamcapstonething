@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Painting
+  - Bucket
+  - Student
+  - Teacher
+  - EnemyCollider
+  - PlayerCollider
   layers:
   - Default
   - TransparentFX
